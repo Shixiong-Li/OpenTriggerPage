@@ -1,0 +1,463 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+
+<style type="text/css">
+    body {
+        font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        font-size: 17px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 980px;
+    }
+
+    h1 {
+        font-weight: 300;
+        line-height: 1.15em;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+
+    a:link, a:visited {
+        color: #48b64e;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #208799;
+    }
+
+    h1, h2, h3 {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-weight: 400;
+        margin: 16px 0px 4px 0px;
+    }
+
+    .paper-title {
+        padding: 16px 0px 16px 0px;
+    }
+
+    section {
+        margin: 32px 0px 32px 0px;
+        text-align: justify;
+        clear: both;
+    }
+
+    .col-5 {
+        width: 20%;
+        float: left;
+    }
+
+    .col-4 {
+        width: 25%;
+        float: left;
+    }
+
+    .col-3 {
+        width: 33%;
+        float: left;
+    }
+
+    .col-2 {
+        width: 50%;
+        float: left;
+    }
+
+    .col-1 {
+        width: 100%;
+        float: left;
+    }
+
+    .row, .author-row, .affil-row {
+        overflow: auto;
+    }
+
+    .author-row, .affil-row {
+        font-size: 26px;
+    }
+
+    .row {
+        margin: 16px 0px 16px 0px;
+    }
+
+    .authors {
+        font-size: 26px;
+    }
+
+    .affil-row {
+        margin-top: 16px;
+    }
+
+    .teaser {
+        max-width: 100%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .screenshot {
+        width: 256px;
+        border: 1px solid #ddd;
+    }
+
+    .screenshot-el {
+        margin-bottom: 16px;
+    }
+
+    hr {
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ddd;
+        margin: 0;
+    }
+
+    .material-icons {
+        vertical-align: -6px;
+    }
+
+    p {
+        line-height: 1.25em;
+    }
+
+    .caption {
+        font-size: 16px;
+        /*font-style: italic;*/
+        color: #666;
+        text-align: center;
+        margin-top: 4px;
+        margin-bottom: 10px;
+    }
+
+    video {
+        display: block;
+        margin: auto;
+    }
+
+    figure {
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #bibtex pre {
+        font-size: 13.5px;
+        background-color: #eee;
+        padding: 16px;
+    }
+
+    .blue {
+        color: #2c82c9;
+        font-weight: bold;
+    }
+
+    .orange {
+        color: #d35400;
+        font-weight: bold;
+    }
+
+    .flex-row {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .paper-btn {
+        position: relative;
+        text-align: center;
+
+        display: inline-block;
+        margin: 8px;
+        padding: 8px 8px;
+
+        border-width: 0;
+        outline: none;
+        border-radius: 2px;
+
+        background-color: #48b64e;
+        color: white !important;
+        font-size: 20px;
+        width: 100px;
+        font-weight: 600;
+    }
+
+    .paper-btn-parent {
+        display: flex;
+        justify-content: center;
+        margin: 16px 0px;
+    }
+
+    .paper-btn:hover {
+        opacity: 0.85;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .venue {
+        /*color: #B6486F;*/
+        font-size: 30px;
+
+    }
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adversarial Attacks on Federated Learning Revisited: a Client-Selection Perspective</title>
+    <!-- <meta property="og:description" content="Your paper description"/> -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Style to center the title on the webpage */
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<!-- <head>
+    <title>Adversarial Attacks on Federated Learning Revisited: a Client-Selection Perspective</title>
+    <meta property="og:description" content="Your paper description"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+</head> -->
+
+<body>
+<div class="container">
+    <div class="paper-title">
+        <h1>Beyond Uniformity: Robust Backdoor Attacks on Deep Neural Networks with Trigger Selection</h1>
+    </div>
+
+    <div id="authors">
+        <center>
+            <div class="author-row">            
+                <div class="col-3 text-center">Shixiong Li<sup>1</sup></div>
+				<div class="col-3 text-center">Xingyu Lyu<sup>1</sup></div>
+                <div class="col-3 text-center"><a href="https://ning-wang1.github.io/">Ning Wang</a><sup>2</sup></div>
+                <div class="col-3 text-center"><a href="https://taolitxjs.github.io/">Tao Li</a><sup>3</sup></div>
+                <div class="col-3 text-center"><a href="https://ccee.ncsu.edu/people/danjuechen/">Danjue Chen</a><sup>4</sup></div>
+                <div class="col-3 text-center"><a href="https://ianchen88.github.io/">Yimin Chen</a><sup>1</sup></div>
+                <!-- Add more authors as needed -->
+            </div>
+
+            <center>
+                <table align=center width=500px>
+                    <tr>
+                        <td align=center width=200px>
+                            <center>
+                                <span style="font-size:20px"><sup>1</sup> University of Massachusetts Lowell</span>
+                            </center>
+                        </td>
+                        <td align=center width=200px>
+                            <center>
+                                <span style="font-size:20px"><sup>2</sup>University of South Florida</span>
+                            </center>
+                        </td>
+                        <td align=center width=200px>
+                            <center>
+                                <span style="font-size:20px"><sup>3</sup>Purdue University</span>
+                            </center>
+                        </td>
+                        <td align=center width=200px>
+                            <center>
+                                <span style="font-size:20px"><sup>4</sup>North Carolina State University</span>
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </center>
+        <br>
+        <!-- <div style="clear: both">
+            <div class="paper-btn-parent">
+                <a class="paper-btn" href="https://ieeexplore.ieee.org/abstract/document/10735606">
+                    <span class="material-icons"> description </span>
+                    Paper
+                </a>
+                <a class="paper-btn" href="https://github.com/CCS2o23/AirTrojan">
+                    <span class="material-icons"> code </span>
+                    Code
+                </a>
+            </div>
+        </div> -->
+    </div>
+
+    <style>
+        #authors {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .author-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+        }
+    
+        .author-item {
+            flex: 1 1 calc(25% - 20px); /* Adjust width to 25% minus the gap */
+            min-width: 180px; /* Prevent it from becoming too small on narrow screens */
+        }
+    
+        @media (max-width: 768px) {
+            .author-item {
+                flex: 1 1 100%; /* Stack authors on smaller screens */
+            }
+        }
+    </style>
+
+
+    <section id="abstract">
+        <h2>Abstract</h2>
+        <hr>
+        <div class="flex-row">
+            <p>
+                Backdoor attacks have been extensively explored in recent years which attack deep neural networks (DNNs) by poisoning their training set and causing targeted mis-classification. Research on such attacks is critical for today's widespread applications based on DNNs due to their low-cost and high efficacy. While many backdoor attacks have been proposed, they usually rely on using a static and fixed trigger for attacks, which not only lacks adaptability but also renders them easier to detect. To address such a limitation, we introduce <b>OpenTrigger</b> in this paper, a novel backdoor attack framework employing dynamic triggers for enhancing attack flexibility and robustness. Unlike traditional approaches that rely on a single fixed trigger, our proposed attack learns a generalized consistent feature across a built trigger pool, hence enabling even the use of unseen triggers during testing that differ from those used during training. To boost the attack efficacy, we employ Particle Swarm Optimization (PSO) to effectively select optimal triggers from a larger set to maximize attack success rate while preserving prediction accuracy on clean data. Extensive experiments across multiple datasets and model architecture confirm the high effectiveness and robustness of <b>OpenTrigger</b> against state-of-the-art and even adaptive backdoor defenses, establishing it as a versatile and practical backdoor attack strategy.
+			</p>
+
+            <ul>
+                <li>We propose <b>OpenTrigger</b>, a novel backdoor attack that learns dynamic and generalized backdoor triggers rather than a fixed trigger.</li>
+                <li>We improve the effectiveness of <b>OpenTrigger</b> by designing a trigger selection method based Particle Swarm Optimization (PSO).</li>
+                <li>We perform comprehensive evaluations, performance comparison, and ablation study for  <b>OpenTrigger</b> across various datasets and victim models. The results show that \texttt{OpenTrigger} consistently achieves high ASR without sacrificing prediction accuracy for clean inputs. Most importantly, our attack performs well under state-of-the-art (SOTA) backdoor defenses. We evaluate our attack even under a strong adaptive defense as well, confirming its robustness towards strong defenses. </li>
+            </ul>
+        </div>
+    </section>
+	
+	<section id="workflow">
+        <h2>Workflow</h2>
+        <hr>
+        <div class="flex-row">
+            <p>
+                Following figure illustrates the workflow of <b>OpenTrigger</b>, which consists of the following five steps. 
+			</p>
+            <ul>
+                <li>Building a trigger pool. The attacker builds a trigger pool <i>Ω</i> with the help of a substitute model <i>Θ<sub>s</sub></i> and a custom PSO algorithm. The attacker further divides <i>Ω</i> into <i>Ω<sub>train</sub></i> and <i>Ω<sub>test</sub></i> dedicated to training and test phases, respectively.
+				<li>Trigger planting for training. To obtain <i>x&#x0303;</i> for a given <i>x∈D<sub>a,clean</sub></i>, the attacker randomly selects a <i>t</i> from  <i>Ω<sub>train</sub></i> and computes <i>x&#x0303</i>; following Equation <i>x&#x0303; = P(x,t) = α·t + (1-α)·x</i>. In the end, the attacker obtains <i>D<sub>poison</sub></i>.</li>
+                <li>Victim model training. The victim model <i>Θ</i> is trained from <i>D<sub>train</sub></i> which the attacker inserts <i>D<sub>poison</sub></i> into.</li>
+				<li>Trigger planting for test. Similarly, during test phase, the attacker obtains <i>x&#x0303</i>; for a given <i>x</i> by randomly selecting a <i>t</i> from <i>Ω<sub>test</sub></i> and computing <i>x&#x0303;</i> with Equation <i>x&#x0303; = P(x,t) = α·t + (1-α)·x</i>.</li>
+				<li>Testing backdoor attack. The attacker uses clean and poisoned samples to evaluate the attack performance.</li>
+				</ul>
+		</div>
+    </section>
+
+    <section id="teaser-image">
+        <figure style="margin-top: 20px; margin-bottom: 20px;">
+            <center><img width="70%" src="./workflow.png" style="margin-bottom: 20px;"></center>
+            <!-- <p class="caption">
+                Attack flow of AirTrojan.
+            </p> -->
+        </figure>
+    </section>
+
+    <section id="results">
+        <h2>Results</h2>
+        <hr>
+        <div class="flex-row">
+            <p>
+                We summarize ASR and ACC of our attack and baselines across various datasets in following table. Note that the higher ASR and ACC, the better backdoor attack. As seen from the results,  <b>OpenTrigger</b> is able to achieve high ASR across all datasets investigated, demonstrated its wide applicability. In comparison to the baselines,  <b>OpenTrigger</b> achieves slightly lower yet comparable attack performance with CTRL, which is the best among all backdoor attacks in our experiments. As expected, the adverage ASR and ACC of  <b>OpenTrigger</b> are lower than those of Blend simply because Blend used the same fixed trigger for all victim samples during training and test phase. As a result, the victim model learns the feature of the fixed trigger in Blend better. However, as will be shown later, our proposed  <b>OpenTrigger</b> demonstrates much better resilience towards backdoor defenses than Blend does, showcasing the advantage of our trigger planting strategy. Overall, the experimental results indicate the effectiveness of our attack in most settings, rendering it a lightweight and effective backdoor attack.
+            </p>
+            <figure style="margin-top: 20px; margin-bottom: 20px;">
+                <center><img width="70%" src="./result.png" style="margin-bottom: 20px;"></center>
+                <!-- <p class="caption">
+                    Impacts of AirTrojan on StealthyMP.
+                </p> -->
+            </figure>
+        </div>
+    </section>
+
+    <section id="paper">
+        <h2>Paper</h2>
+        <hr>
+        <div class="flex-row" style="display: flex; align-items: center;">
+            <div style="box-sizing: border-box; padding: 16px; margin: auto; flex: 0 0 150px;">
+                <a href="https://ieeexplore.ieee.org/abstract/document/10735606">
+                    <img class="screenshot" src="./paper.png" style="max-width: 100%; height: auto;">
+                </a>
+            </div>
+            <div style="width: 50%; font-size: 20px; padding-left: 16px;">
+                <p><b>Adversarial Attacks on Federated Learning Revisited: a Client-Selection Perspective</b></p>
+                <p>Shixiong Li, Xingyu Lyu, Ning Wang, Tao Li, Danjue Chen, Yimin Chen.</p>
+                <div><span class="material-icons"> description </span><a href="https://ieeexplore.ieee.org/abstract/document/10735606">PDF</a></div>
+                <!-- <div><span class="material-icons"> insert_comment </span><a href="./assets/your-paper.bib"> BibTeX</a></div> -->
+                <div><span class="material-icons"> integration_instructions </span><a href="https://github.com/Shixiong-Li/openTrigger"> Code</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bibtex">
+        <h2>Citation</h2>
+        <hr>
+        <div class="bibtex-container">
+            <pre><code class="bibtex">@INPROCEEDINGS{10735606,
+        author={Lyu, Xingyu and Li, Shixiong and Wang, Ning and Li, Tao and Chen, Danjue and Chen, Yimin},
+        booktitle={2024 IEEE Conference on Communications and Network Security (CNS)}, 
+        title={Adversarial Attacks on Federated Learning Revisited: a Client-Selection Perspective}, 
+        year={2024},
+        doi={10.1109/CNS62487.2024.10735606}}</code></pre>
+        </div>
+    </section>
+   
+
+    <style>
+    #bibtex {
+        font-family: 'Courier New', Courier, monospace;
+        margin: 20px 0;
+    }
+    
+    #bibtex h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    #bibtex hr {
+        margin: 10px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+    
+    .bibtex-container {
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .bibtex {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        overflow-x: auto;
+    }
+    </style>
+    
+    
+</div>
+</body>
+</html>
